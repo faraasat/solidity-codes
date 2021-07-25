@@ -11,6 +11,8 @@ contract Fallback {
     // 1) a function that does not exist is called or
     // 2) Ether is sent directly to a contract but recieve() does not exist or msg.data is not empty
     // Fallback has a 2300 gas limit when called by transfer or send
+    // Fallback is for value + data transaction and it is used when a contract do not have that function and data is also sent.
+    // Recieve is used for value transaction
     
     event Log(string);
     event LogInt(uint);

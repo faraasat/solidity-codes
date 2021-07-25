@@ -29,12 +29,9 @@ contract Cars is ParentVehicle{
         _service = "The Car is being serviced";
         return _service;
     }
-
-}
-     
+}  
     
 contract Truck is ParentVehicle{
-    
     function service() override public pure  returns (string memory _service){  
         _service = "The Truck is being serviced";
         return _service;
@@ -42,10 +39,8 @@ contract Truck is ParentVehicle{
 
 }
      
-contract MotorCycle is ParentVehicle{
-    
-    function service() override public pure  returns (string memory _service){
-        
+contract MotorCycle is ParentVehicle{   
+    function service() override public pure  returns (string memory _service){       
         _service = "The MotorCycle is being serviced";
         return _service;
     }
@@ -65,26 +60,25 @@ contract Yamaha is MotorCycle{
 
 contract carservice is Cars {
     
-    function _carservice(address add) public pure returns (string memory) {
-        
+    function _carservice(address add) public pure returns (string memory) { 
        carservice a = carservice(add);
        return a.service();
     }
+
 }
 
 contract Truckservice is Truck {
     
     function _Truckservice(address add) public pure returns (string memory) {
-        
        Truckservice a = Truckservice(add);
        return a.service();
     }
+
 }
 
 contract MotorCycleservice is MotorCycle {
     
     function _MotorCycleservice(address add) public pure returns (string memory) {
-        
        MotorCycleservice a = MotorCycleservice(add);
        return a.service();
     }
